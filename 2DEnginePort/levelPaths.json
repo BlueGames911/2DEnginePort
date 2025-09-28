@@ -1,0 +1,10 @@
+{
+  "levels": [
+    { "name": "tmpLevel", "path": "assets/maps/tmpLevel/tmpLevel.json" },
+    { "name": "level1", "path": "assets/maps/level1/level1.json" }
+  ],
+
+
+  "defaultLevel" : "tmpLevel",
+  "lastLoadedLevel" : "tmpLevel"
+}

@@ -1,0 +1,36 @@
+{
+  "enemies": [
+    {
+      "type": "goblin",
+      "x": 1200,
+      "y": 320,
+      "facing": "left",
+      "params": {
+        "patrolLeft": 1100,
+        "patrolRight": 1400,
+        "health": 28
+      }
+    },
+    {
+      "type": "mushroom",
+      "x": 1500,
+      "y": 300,
+      "params": {
+        "fireRate": 2.0,
+        "projectileSpeed": 120
+      }
+    },
+    {
+      "type": "skeleton",
+      "x": 1800,
+      "y": 320,
+      "params": { "blockMeter": 50 }
+    },
+    {
+      "type": "flying_eye",
+      "x": 2100,
+      "y": 200,
+      "params": { "hoverRange": 60 }
+    }
+  ]
+}

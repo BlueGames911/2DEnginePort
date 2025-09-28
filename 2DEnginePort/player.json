@@ -1,0 +1,229 @@
+{
+  "spriteScale": 2.5,
+  "sheets": [
+    { "name": "base", "path": "assets/characters/player/player.png", "frameWidth": 50, "frameHeight": 37 },
+    { "name": "second", "path": "assets/characters/player/player2.png", "frameWidth": 50, "frameHeight": 37 }
+  ],
+
+  "animations": 
+  {
+    "movements": 
+    [
+      {
+        "name": "idle",
+        "sheet": "base",
+        "frames": [ {"x":0,"y":0}, {"x":1,"y":0}, {"x":2,"y":0}, {"x":3,"y":0} ],
+        "frameDuration": 0.15,
+        "loop": true,
+        "invulnerable": false,
+        "collisionBox": { "w": 10, "h": 28, "offsetX": 0, "offsetY": 0 },
+        "events": []
+      },
+      {
+        "name": "crouch",
+        "sheet": "base",
+        "frames": [ {"x":4,"y":0}, {"x":5,"y":0}, {"x":6,"y":0}, {"x":0,"y":1} ],
+        "frameDuration": 0.15,
+        "loop": true,
+        "invulnerable": false,
+        "collisionBox": { "w": 10, "h": 20, "offsetX": 1, "offsetY": 0 },
+        "events": []
+      },
+      {
+        "name": "crouch-walk",
+        "sheet": "second",
+        "frames": [ {"x":3,"y":7}, {"x":4,"y":7}, {"x":5,"y":7}, 
+                    {"x":6,"y":7}, {"x":0,"y":8}, {"x":1,"y":8}],
+        "frameDuration": 0.15,
+        "loop": true,
+        "invulnerable": false,
+        "collisionBox": { "w": 11, "h": 20, "offsetX": 1, "offsetY": 0 },
+        "events": []
+      },
+      {
+        "name": "run",
+        "sheet": "base",
+        "frames": [
+          {"x":1,"y":1}, {"x":2,"y":1}, {"x":3,"y":1},
+          {"x":4,"y":1}, {"x":5,"y":1}, {"x":6,"y":1}
+        ],
+        "frameDuration": 0.1,
+        "loop": true,
+        "invulnerable": false,
+        "collisionBox": { "w": 13, "h": 29, "offsetX": 2, "offsetY": 0 },
+        "events": []
+      },
+      {
+        "name": "fall",
+        "sheet": "base",
+        "frames": [ {"x":1,"y":3}, {"x":2,"y":3}],
+        "frameDuration": 0.1,
+        "loop": true,
+        "invulnerable": false,
+        "collisionBox": { "w": 10, "h": 24, "offsetX": 1, "offsetY": 2 },
+        "events": []
+      },
+      {
+        "name": "jump",
+        "sheet": "base",
+        "frames": [ {"x":0,"y":2}, {"x":1,"y":2}, {"x":2,"y":2}, {"x":3,"y":2} ],
+        "frameDuration": 0.12,
+        "loop": false,
+        "invulnerable": false,
+        "collisionBox": { "w": 10, "h": 20, "offsetX": 1, "offsetY": 2 },
+        "events": []
+      },
+      {
+      "name": "roll",
+      "sheet": "base",
+      "frames": [ {"x":0,"y":9}, {"x":1,"y":9}, {"x":2,"y":9}, {"x":3,"y":9} ],
+      "frameDuration": 0.1,
+      "loop": false,
+      "invulnerable": true,
+      "collisionBox": { "w": 28, "h": 40, "offsetX": 0, "offsetY": 0 },
+      "events": [
+        { "frameIndex": 0, "type": "sound", "value": "roll" }
+      ]
+    }
+  ],
+  "attacks": [
+  {
+    "name": "ground_slash",
+    "stages": [
+      {
+        "name": "ground_slash1",      
+        "sheet": "base",
+        "frames": [
+          {"x":0,"y":6}, {"x":1,"y":6}, {"x":2,"y":6},
+          {"x":3,"y":6}, {"x":4,"y":6}
+        ],
+        "frameDuration": 0.07,
+        "loop": false,
+        "can_be_comboed": true,
+        "can_be_interrupted": false,
+        "damage": 10,
+        "collisionBox": { "w": 10, "h": 29, "offsetX": 0, "offsetY": 0 },
+        "events": [
+          { "frameIndex": 2, "type": "sound", "value": "sword_swing1" },
+          { "frameIndex": 2, "type": "hitbox", "w": 15, "h": 22, "offsetX": 19, "offsetY": 3 }
+        ]
+      },
+      {
+        "name": "ground_slash2",
+        "sheet": "base",
+        "frames": [
+          {"x":5,"y":6}, {"x":6,"y":6}, {"x":0,"y":7},
+          {"x":1,"y":7}, {"x":2,"y":7}, {"x":3,"y":7}
+        ],
+        "frameDuration": 0.08,
+        "loop": false,
+        "can_be_comboed": true,
+        "can_be_interrupted": false,
+        "damage": 12,
+        "collisionBox": { "w": 10, "h": 29, "offsetX": 0, "offsetY": 0 },
+        "events": [
+          { "frameIndex": 3, "type": "sound", "value": "sword_swing2" },
+          { "frameIndex": 3, "type": "hitbox", "w": 15, "h": 21, "offsetX": 19, "offsetY": 3 }
+        ]
+      },
+      {
+        "name": "ground_slash3",
+        "sheet": "base",
+        "frames": [
+          {"x":4,"y":7}, {"x":5,"y":7}, {"x":6,"y":7},
+          {"x":0,"y":8}, {"x":1,"y":8}, {"x":2,"y":8}
+        ],
+        "frameDuration": 0.08,
+        "loop": false,
+        "can_be_comboed": false,
+        "can_be_interrupted": false,
+        "damage": 15,
+        "collisionBox": { "w": 10, "h": 29, "offsetX": 0, "offsetY": 0},
+        "events": [
+          { "frameIndex": 2, "type": "sound", "value": "sword_swing3" },
+          { "frameIndex": 2, "type": "hitbox", "w": 17, "h": 18, "offsetX": 20, "offsetY": 9 }
+        ]
+      }
+    ]
+  },
+  {
+  "name": "air_slash",
+    "stages": [
+      {
+        "name": "air_slash1",      
+        "sheet": "base",
+        "frames": [
+          {"x":5,"y":13}, {"x":6,"y":13}, {"x":0,"y":14},
+          {"x":1,"y":14}
+        ],
+        "frameDuration": 0.09,
+        "loop": false,
+        "can_be_comboed": true,
+        "can_be_interrupted": false,
+        "damage": 10,
+        "collisionBox": { "w": 10, "h": 29, "offsetX": 0, "offsetY": 0 },
+        "events": [
+          { "frameIndex": 2, "type": "sound", "value": "sword_swing1" },
+          { "frameIndex": 2, "type": "hitbox", "w": 12, "h": 25, "offsetX": 13, "offsetY": 3 }
+        ]
+      },
+      {
+        "name": "air_slash2",
+        "sheet": "base",
+        "frames": [
+          {"x":2,"y":14}, {"x":3,"y":14}, {"x":4,"y":14}
+        ],
+        "frameDuration": 0.08,
+        "loop": false,
+        "can_be_comboed": false,
+        "can_be_interrupted": false,
+        "damage": 12,
+        "collisionBox": { "w": 10, "h": 29, "offsetX": 0, "offsetY": 0 },
+        "events": [
+          { "frameIndex": 3, "type": "sound", "value": "sword_swing2" },
+          { "frameIndex": 1, "type": "hitbox", "w": 12, "h": 25, "offsetX": 13, "offsetY": 3 }
+        ]
+      }
+    ]
+  },
+
+  {
+    "name": "roll_attack",
+    "baseDamage": 8,
+    "stages": [
+      {
+        "name": "roll_strike",
+        "sheet": "base",
+        "frames": [
+          {"x":0,"y":9}, {"x":1,"y":9}, {"x":2,"y":9}, {"x":3,"y":9}
+        ],
+        "frameDuration": 0.08,
+        "loop": false,
+        "can_be_comboed": false,
+        "can_be_interrupted": false,
+        "damage": 8,
+        "collisionBox": { "w": 25, "h": 40, "offsetX": 0, "offsetY": 0 },
+        "events": [
+          { "frameIndex": 1, "type": "sound", "value": "roll_strike" },
+          { "frameIndex": 2, "type": "hitbox", "w": 30, "h": 30, "offsetX": 25, "offsetY": 5 }
+        ]
+      }
+    ]
+  }
+]
+
+ },
+
+  "physics": {
+    "runSpeed": 210,
+    "walkSpeed": 300,
+    "crouchSpeed": 75,
+    "jumpForce": -400,
+    "gravity": 800,
+    "maxFallSpeed": 1000,
+    "crouchHeightOffset": 18,
+    "acceleration": 950,
+    "decceleration": 1850,
+    "crouchLag": 0.3
+  }
+}

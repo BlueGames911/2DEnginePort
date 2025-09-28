@@ -1,0 +1,119 @@
+{
+  "type": "goblin",
+  "base": {
+    "health": 28,
+    "runSpeed": 80.0,
+    "gravity": 700.0,
+    "spriteScale": 2.0
+  },
+  "sheets": [
+    {
+      "name": "idle",
+      "path": "assets/characters/enemies/goblin/idle.png",
+      "frameWidth": 150,
+      "frameHeight": 150
+    },
+    {
+      "name": "attack1",
+      "path": "assets/characters/enemies/goblin/Attack.png",
+      "frameWidth": 150,
+      "frameHeight": 150
+    },
+    {
+      "name": "attack2",
+      "path": "assets/characters/enemies/goblin/Attack2.png",
+      "frameWidth": 150,
+      "frameHeight": 150
+    },
+    {
+      "name": "attack3",
+      "path": "assets/characters/enemies/goblin/Attack3.png",
+      "frameWidth": 150,
+      "frameHeight": 150
+    },
+    {
+      "name": "run",
+      "path": "assets/characters/enemies/goblin/Run.png",
+      "frameWidth": 150,
+      "frameHeight": 150
+    },
+    {
+      "name": "death",
+      "path": "assets/characters/enemies/goblin/Death.png",
+      "frameWidth": 150,
+      "frameHeight": 150
+    },
+    {
+      "name": "hurt",
+      "path": "assets/characters/enemies/Take Hit.png",
+      "frameWidth": 150,
+      "frameHeight": 150
+    }
+  ],
+  "animations": [
+    {
+      "name": "idle",
+      "sheet": "idle",
+      "frameCount": 4,
+      "frameDuration": 0.1,
+      "loop": true,
+      "invulnerable": false,
+      "collisionBox": { "w": 10, "h": 28, "offsetX": 0, "offsetY": 0 },
+      "events": []
+    },
+    {
+      "name": "run",
+      "sheet": "run",
+      "frameCount": 8,
+      "frameDuration": 0.08,
+      "loop": true,
+      "invulnerable": false,
+      "collisionBox": { "w": 10, "h": 28, "offsetX": 0, "offsetY": 0 },
+      "events": []
+    },
+    {
+      "name": "hurt",
+      "sheet": "hurt",
+      "frameCount": 4,
+      "frameDuration": 0.11,
+      "loop": false,
+      "invulnerable": true,
+      "collisionBox": { "w": 10, "h": 28, "offsetX": 0, "offsetY": 0 },
+      "events": []
+    },
+    {
+      "name": "die",
+      "sheet": "base",
+      "frameCount": 6,
+      "frameDuration": 0.10,
+      "loop": false,
+      "invulnerable": true,
+      "collisionBox": { "w": 10, "h": 28, "offsetX": 0, "offsetY": 0 },
+      "events": []
+    },
+    {
+      "name": "attack1",
+      "sheet": "attack1",
+      "frameCount": 8,
+      "frameDuration": 0.07,
+      "loop": false,
+      "events": [
+        {"frameIndex": 2, "type": "sound", "value": "sword_swing1" },
+        { "frameIndex": 2, "type": "hitbox", "w": 12, "h": 25, "offsetX": 13, "offsetY": 3}
+      ]
+    }
+  ],
+  "attacks": [
+    {
+      "name": "slash",
+      "baseDamage": 6,
+      "stages": [
+        {
+          "name": "slashStage",
+          "animation": "attack1",
+          "canBeComboed": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+    "controls": 
+    {
+        "moveLeft": "Left",
+        "moveRight": "Right",
+        "jump": "Space",
+        "crouch": "Left Shift",
+        "attack": "Z",
+        "dash": "X"
+    },
+
+    "audio":
+    {
+        "masterVolume": 0.8,
+        "musicVolume": 0.5,
+        "sfxVolume": 0.7
+    },
+
+    "videoSettings":
+    {
+        "resolutionWidth": 960,
+        "resolutionHeight": 540,
+        "fullscreen": false,
+        "vSync": false,
+        "scale": 1.00
+    },
+
+    "gameplaySettings":
+    {
+        "debugMode": false
+    }
+
+}

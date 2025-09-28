@@ -1,0 +1,47 @@
+{
+  "levelName": "TestLevel",
+  "spawnColumn": 5,
+  "levelColumns": 64,
+  "levelRows": 20,
+  "hasEnemies": true,
+  "enemyPath":  "assets/maps/tmpLevel/enemies_tmpLevel.json",
+
+  "tilesets": [
+    {
+      "id": "mainTiles",
+      "image": "assets/mapFiles/Tileset.png",
+      "tileSize": 16,
+      "tilesPerRow": 8,
+      "scale": 2.5
+    },
+    {
+      "id": "props",
+      "image": "assets/mapFiles/props.png",
+      "tileSize": 16,
+      "tilesPerRow": 26,
+      "scale": 2.5
+    },
+    {
+      "id": "decor",
+      "image": "assets/mapFiles/decors.png",
+      "tileSize": 16,
+      "tilesPerRow": 14,
+      "scale": 2.5
+    }
+  ],
+
+  "layers": [
+    { "name": "background2", "csv": "assets/maps/tmpLevel/TmpLevel._Backgroung -1.csv", "tileset": "mainTiles" , "collidable": false},
+    { "name": "background",  "csv": "assets/maps/tmpLevel/TmpLevel._background.csv", "tileset": "mainTiles" , "collidable": false},
+    { "name": "decorLayer", "csv":"assets/maps/tmplevel/TmpLevel._Decor Layer.csv", "tileset": "decor", "collidable": false},
+    { "name": "props",  "csv": "assets/maps/tmpLevel/TmpLevel._Sunny Lands layer.csv", "tileset": "props" , "collidable": false},
+    { "name": "foreground",  "csv": "assets/maps/tmplevel/TmpLevel._Tile Layer 1.csv",     "tileset": "mainTiles",
+      "collidable": true,  "solidTiles": [0, 1, 2, 9, 5]}
+  ],
+
+  "backgrounds": [
+    { "image": "assets/mapFiles/BG1.png", "scrollSpeed": 0.3, "scale": 1.0, "offsetY": 0 },
+    { "image": "assets/mapFiles/BG2.png", "scrollSpeed": 0.4, "scale": 1.0, "offsetY": -35 },
+    { "image": "assets/mapFiles/BG3.png", "scrollSpeed": 0.5, "scale": 1.0, "offsetY": -50}
+  ]
+}
