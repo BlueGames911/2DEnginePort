@@ -49,7 +49,6 @@ GameManager *GameManager_Create(const char *settingsPath, const char *windowName
         return NULL;
     }
 
-    printf("Loading level paths");
     // Load level paths
     gm->levelPaths = levelPaths("levelPaths.json");
     if (!gm->levelPaths) {

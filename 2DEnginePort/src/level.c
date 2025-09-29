@@ -51,7 +51,7 @@ LevelPaths *levelPaths(char *jSONPath)
         cJSON *path = cJSON_GetObjectItemCaseSensitive(pths, "path");
 
         if (cJSON_IsString(name) && name->valuestring) {
-            levels->name = _strdup(name->valuestring);
+            levels[idx].name = _strdup(name->valuestring);
         }
         else
         {
@@ -59,7 +59,7 @@ LevelPaths *levelPaths(char *jSONPath)
         }
 
         if (cJSON_IsString(path) && path->valuestring) {
-            levels->path = _strdup(path->valuestring);
+            levels[idx].path = _strdup(path->valuestring);
         }
         else
         {
@@ -67,29 +67,21 @@ LevelPaths *levelPaths(char *jSONPath)
         }
         idx++;
     }
-    printf("Loaded Level Paths and Name\n");
 
     cJSON *defaultLevel = cJSON_GetObjectItemCaseSensitive(levelPathsFile, "defaultLevel");
     if (cJSON_IsString(defaultLevel)) {
-        size_t len = strlen(defaultLevel->valuestring);
-        lp->defaultLevel = malloc(len + 1);
-        if (lp->defaultLevel) {
-            memcpy(lp->defaultLevel, defaultLevel->valuestring, len + 1);
-        }
+        lp->defaultLevel = _strdup(defaultLevel->valuestring);
     }
 
     cJSON *lastLoadedLevel = cJSON_GetObjectItemCaseSensitive(levelPathsFile, "lastLoadedLevel");
     if (cJSON_IsString(lastLoadedLevel)) {
-        size_t len = strlen(lastLoadedLevel->valuestring);
-        lp->lastLoadedLevel = malloc(len + 1);
-        if (lp->lastLoadedLevel) {
-            memcpy(lp->lastLoadedLevel, lastLoadedLevel->valuestring, len + 1);
-        }
+        lp->lastLoadedLevel = _strdup(lastLoadedLevel->valuestring);
     }
 
    cJSON_Delete(levelPathsFile);
    
    lp->levels = levels;
+   printf("Loaded Level Paths and Name\n");
    return lp;
 
 }

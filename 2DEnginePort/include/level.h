@@ -12,12 +12,6 @@ typedef struct Player Player;
 typedef struct GameManager GameManager;
 
 typedef struct {
-    char *path;
-    SDL_Texture *tex;
-} TextureCacheItem;
-
-
-typedef struct {
     char *name;  // e.g., "level1"
     char *path;  // e.g., "maps/level1/level1.json"
 } LevelEntry;
